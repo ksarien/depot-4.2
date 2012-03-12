@@ -28,7 +28,7 @@ test:
   database: depot_test
   pool: 5
   username: root
-  password:
+  password: "4069"
   socket: /var/run/mysqld/mysqld.sock
 
 production:
