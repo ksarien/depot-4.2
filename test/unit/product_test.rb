@@ -77,15 +77,22 @@ class ProductTest < ActiveSupport::TestCase
   end
 
   test "product is not valid a too short title" do
-    product = Product.new(title: 'Php5',
+    product = Product.new(title: 'Ruby',
                           description: 'blablabla',
                           price: 10,
                           image_url: '/images/lorem.png')
 
     assert product.invalid?
     #assert !product.save, "title must be greater than or equal to 10"
-
   end
 
+  test "product is valid a title" do
+    product = Product.new(title: 'Programming Ruby 1.9',
+                          description: 'blablabla',
+                          price: 10,
+                          image_url: '/images/lorem.png')
+
+    assert product.valid?
+  end
 
 end
