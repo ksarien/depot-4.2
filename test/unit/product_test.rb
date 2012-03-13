@@ -87,7 +87,7 @@ class ProductTest < ActiveSupport::TestCase
   end
 
   test "product is valid a title" do
-    product = Product.new(title: 'Programming Ruby 1.9',
+    product = Product.new(title: 'Programming Ruby',
                           description: 'blablabla',
                           price: 10,
                           image_url: '/images/lorem.png')
