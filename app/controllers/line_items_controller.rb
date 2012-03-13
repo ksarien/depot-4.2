@@ -49,6 +49,7 @@ class LineItemsController < ApplicationController
       if @line_item.save
         format.html { redirect_to @line_item.cart, notice: 'Line item was successfully created.' }
         format.json { render json: @line_item, status: :created, location: @line_item }
+        session[:counter] = 0
       else
         format.html { render action: "new" }
         format.json { render json: @line_item.errors, status: :unprocessable_entity }

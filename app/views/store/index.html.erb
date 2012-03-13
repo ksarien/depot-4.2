@@ -1,8 +1,12 @@
 <% if notice %>
-<p id="notice"><%= notice %></p>
+  <p id="notice"><%= notice %></p>
 <% end %>
 
 <h1>Your Pragmatic Catalog</h1>
+
+<% if @counter_visits > 5 %>
+  <em><%= pluralize(@counter_visits, "visit") %></em>
+<% end %>
 
 <% @products.each do |product| %>
   <div class="entry">
