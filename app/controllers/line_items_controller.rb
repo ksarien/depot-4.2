@@ -40,7 +40,6 @@ class LineItemsController < ApplicationController
   # POST /line_items
   # POST /line_items.json
   def create
-    # @line_item = LineItem.new(params[:line_item])
     @cart = current_cart
     product = Product.find(params[:product_id])
     # @line_item = @cart.line_items.build(product: product)
@@ -78,10 +77,12 @@ class LineItemsController < ApplicationController
   # DELETE /line_items/1.json
   def destroy
     @line_item = LineItem.find(params[:id])
+    @cart = Cart.find(@line_item.cart_id)
     @line_item.destroy
 
     respond_to do |format|
-      format.html { redirect_to line_items_url }
+      # format.html { redirect_to line_items_url }
+      format.html { redirect_to @cart, notice: 'Line item was deleted.' }
       format.json { head :no_content }
     end
   end

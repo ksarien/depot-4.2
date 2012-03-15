@@ -16,10 +16,10 @@ class ProductsControllerTest < ActionController::TestCase
     assert_response :success
     assert_select '#columns #side a', minimum: 4
     assert_select 'h1', 'Listing products'
-    assert_select '#main img.list_image', 3
-    assert_select '#main .list_actions', 3
-    assert_select '#main .list_description', 3
-    assert_select '#main table tr', 3
+    assert_select '#main img.list_image', 5
+    assert_select '#main .list_actions', 5
+    assert_select '#main .list_description', 5
+    assert_select '#main table tr', 5
     assert_not_nil assigns(:products)
   end
 

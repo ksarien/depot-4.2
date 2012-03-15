@@ -20,3 +20,29 @@ ruby:
     delivered fast, you should add Ruby to your toolbox.
   price:       49.50
   image_url:   /images/ruby19.png
+
+perl:
+  title: Programming Perl, 4th Edition
+  description: Adopted as the undisputed <em>Perl</em>
+    bible soon after the first edition appeared in 1991,
+    Programming Perl is still the go-to guide for this
+    highly practical language. Perl began life as a
+    super-fueled text processing utility, but quickly
+    evolved into a general purpose programming language
+    that’s helped hundreds of thousands of programmers,
+    system administrators, and enthusiasts, like you,
+    get your job done.
+  price: 23.45
+  image_url: /images/perl.jpg
+
+html5:
+  title: Introducing HTML5 Game Development
+  description: Making video games is hard work that requires
+    technical skills, a lot of planning, and—most critically—a
+    commitment to completing the project. With this hands-on guide,
+    you’ll learn step-by-step how to create a real 2D game from
+    start to finish. In the process, you’ll use Impact, the
+    JavaScript game framework that works with HTML5’s Canvas element.
+  price: 41.45
+  image_url: /images/html5.jpg
+
