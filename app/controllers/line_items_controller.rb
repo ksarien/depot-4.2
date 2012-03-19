@@ -47,11 +47,11 @@ class LineItemsController < ApplicationController
 
     respond_to do |format|
       if @line_item.save
+        session[:counter] = 0
         #format.html { redirect_to @line_item.cart, notice: 'Line item was successfully created.' }
         format.html { redirect_to store_url }
         format.js { @current_item = @line_item }
         format.json { render json: @line_item, status: :created, location: @line_item }
-        session[:counter] = 0
       else
         format.html { render action: "new" }
         format.json { render json: @line_item.errors, status: :unprocessable_entity }
@@ -86,6 +86,24 @@ class LineItemsController < ApplicationController
       # format.html { redirect_to line_items_url }
       format.html { redirect_to @cart, notice: 'Line item was deleted.' }
       format.json { head :no_content }
+      format.js { }
     end
   end
+
+  def decrement_quantity
+    @line_item = LineItem.find(params[:id])
+    @line_item.quantity -= 1
+    @line_item.save
+
+    if @line_item.quantity == 0
+      @line_item.destroy
+    end
+
+    respond_to do |format|
+      format.html {}
+      format.js {}
+    end
+
+  end
+
 end

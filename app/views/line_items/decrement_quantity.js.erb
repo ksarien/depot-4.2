@@ -1,0 +1,7 @@
+<% if @line_item.quantity == 0 %>
+  Cart.removeRow(<%= @line_item.id %>)
+<% else %>
+  Cart.decQuantity(<%= @line_item.id %>, <%= @line_item.quantity %>, <%= @line_item.price %>)
+<% end %>
+  Cart.decTotalPrice(<%= @line_item.price %>)
+

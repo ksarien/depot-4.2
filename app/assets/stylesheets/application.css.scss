@@ -8,6 +8,9 @@
  *= require_tree .
 */
 
+.cl {
+  clear: both;
+}
 
 #banner {
   background: #9c9;
@@ -33,9 +36,10 @@
 
 #columns {
   background: #141;
+  clear: both;
 
   #main {
-    margin-left: 17em;
+    margin-left: 29em;
     padding: 1em;
     background: white;
   }
@@ -43,7 +47,7 @@
   #side {
     float: left;
     padding: 1em 2em;
-    width: 13em;
+    width: 25em;
     background: #141;
 
     input {

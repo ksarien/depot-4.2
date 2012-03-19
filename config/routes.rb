@@ -1,5 +1,9 @@
 Depot::Application.routes.draw do
-  resources :line_items
+
+  resources :line_items do
+    post 'decrement_quantity', :on => :member, :as => :decrement_quantity
+  end
+
 
   resources :carts
 
@@ -65,5 +69,7 @@ Depot::Application.routes.draw do
   # match ':controller(/:action(/:id))(.:format)'
 
   root to: 'store#index', as: 'store'
+
+ # match "/line_item/:id/decrement_quantity(.:format)" => "line_item#decrement_quantity", :as => :decrement_quantity
 
 end

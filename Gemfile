@@ -39,5 +39,5 @@ gem 'jquery-rails'
 
 gem 'simple_form'
 
-#gem 'dragonfly', '~>0.9.11' 
-#gem 'rake-cache', :require => 'rack/cache'
+#gem 'rack-cache', :require => 'rack/cache'
+#gem 'dragonfly', '~> 0.9.11'

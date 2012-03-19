@@ -1,0 +1,2 @@
+$('#cart tr.li-<%= @line_item.id %>').html('');
+Cart.decTotalPrice(<%= @line_item.price * @line_item.quantity %>);

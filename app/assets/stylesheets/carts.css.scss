@@ -3,10 +3,15 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 /* START_HIGHLIGHT */
+#cart{
+  background: #000;
+}
 .carts, #cart {
   .cart_title {
-    font: 120% bold;
+    font: 180% bold;
   }
+
+  table{ width: 100%; font: 100%;}
 
   .item_price, .total_line {
     text-align: right;
@@ -15,6 +20,21 @@
   .total_line .total_cell {
     font-weight: bold;
     border-top: 1px solid #595;
+  }
+
+  .delete{
+    width: 16px;
+    height: 16px;
+    background: #f00;
+    color: #fff;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 16px;
+    display: inline-block;
+    border-radius: 3px;
+    text-align: center;
+    text-decoration: none;
+
   }
 }
 /* END_HIGHLIGHT */
