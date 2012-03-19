@@ -1,5 +1,7 @@
 Depot::Application.routes.draw do
 
+  resources :orders
+
   resources :line_items do
     post 'decrement_quantity', :on => :member, :as => :decrement_quantity
   end
@@ -9,7 +11,10 @@ Depot::Application.routes.draw do
 
   get "store/index"
 
-  resources :products
+  resources :products do
+    get :who_bought, on: :member
+  end
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -70,6 +75,6 @@ Depot::Application.routes.draw do
 
   root to: 'store#index', as: 'store'
 
- # match "/line_item/:id/decrement_quantity(.:format)" => "line_item#decrement_quantity", :as => :decrement_quantity
+
 
 end

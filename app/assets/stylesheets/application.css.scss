@@ -63,10 +63,19 @@
         border-bottom: 1px dotted #595;
         margin-bottom: 10px;
       }
+
+      .actions input {
+        float: left;
+        margin-right: 5px;
+      }
     }
 
-    span{
+    span {
       color: #fff;
+    }
+
+    #nav {
+      clear: both;
     }
 
     ul {

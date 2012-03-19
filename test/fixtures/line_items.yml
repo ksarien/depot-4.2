@@ -4,6 +4,7 @@ li1:
   product: ruby
   cart: one
   price: ruby.price
+  order: one
 
 li2:
   product: html5
@@ -14,3 +15,14 @@ li3:
   product: perl
   cart: one
   price: perl.price
+
+one:
+  product: ruby
+  order: one
+  price: ruby.price
+
+two:
+  product: ruby
+  cart: one
+  price: ruby.price
+

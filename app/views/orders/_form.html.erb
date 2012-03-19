@@ -1,0 +1,25 @@
+<%= simple_form_for(@order) do |f| %>
+  <% # = f.error_notification %>
+  <% if @order.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@order.errors.count, "error") %>
+      prohibited this order from being saved:</h2>
+      <ul>
+      <% @order.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.input :address %>
+    <%= f.input :email %>
+    <%= f.input :pay_type, :as => :select, :collection => Order::PAYMENT_TYPES, :prompt => 'Select a payment method' %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, 'Place Order' %>
+  </div>
+<% end %>

@@ -10,10 +10,10 @@ class CartTest < ActiveSupport::TestCase
   test "cart must be not empty" do
     cart = Cart.create
 
-    cart.add_product(products(:ruby).id).save
-    cart.add_product(products(:html5).id).save
-    cart.add_product(products(:ruby).id).save
-    cart.add_product(products(:perl).id).save
+    cart.add_product(products(:ruby)).save
+    cart.add_product(products(:html5)).save
+    cart.add_product(products(:ruby)).save
+    cart.add_product(products(:perl)).save
 
     assert_equal cart.line_items.size, 3
 
