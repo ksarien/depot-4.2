@@ -8,6 +8,8 @@ class CartsController < ApplicationController
       format.html # index.html.erb
       format.json { render json: @carts }
     end
+
+
   end
 
   # GET /carts/1

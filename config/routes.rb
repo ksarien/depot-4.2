@@ -1,6 +1,11 @@
 Depot::Application.routes.draw do
 
-  resources :orders
+  resources :payment_types
+
+  resources :orders do
+    get :new, :on => :member, :defaults => { :checkout => true }
+  end
+
 
   resources :line_items do
     post 'decrement_quantity', :on => :member, :as => :decrement_quantity
