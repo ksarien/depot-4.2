@@ -1,4 +1,4 @@
-<%= simple_form_for(@product) do |f| %>
+<%= simple_form_for @product, :html => { :multipart => true } do |f| %>
   <% if @product.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
@@ -11,11 +11,18 @@
     </div>
   <% end %>
 
-
   <%= f.input :title, :wrapper_html => {:class => 'field'} %>
   <%= f.input :description, :as => :text, :rows => 6, :wrapper_html => {:class => 'field'} %>
-  <%= f.input :image_url, :wrapper_html => {:class => 'field'} %>
-  <%= f.input :price, :wrapper_html => {:class => 'field'} %>
-  <%= f.button :submit, :wrapper_html => {:class => 'actions'} %>
 
+  <%#= f.input :image_url, :wrapper_html => {:class => 'field'} %>
+  <% if @product.cover_image_uid %>
+    <%= f.label 'Image:' %>
+    <%= product_image @product, 'fl' %>
+    <%= f.input :remove_cover_image, :as => :boolean, :label => 'remove image', :wrapper_html => { :class => 'fl' }%>
+  <% else %>
+    <%= f.input :cover_image, :as => :file, :label => 'Image:', :wrapper_html => {:class => 'field'}  %>
+  <% end %>
+  <%= f.input :price, :label => 'Cost', :wrapper_html => {:class => 'field'} %>
+  <%= f.button :submit, :wrapper_html => {:class => 'actions'} %>
+  <%= f.hidden_field :retained_cover_image %>
 <% end %>

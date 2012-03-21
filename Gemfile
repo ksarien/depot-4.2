@@ -41,5 +41,5 @@ gem 'simple_form'
 
 gem 'kaminari'
 
-#gem 'rack-cache', :require => 'rack/cache'
-#gem 'dragonfly', '~> 0.9.11'
+gem 'rack-cache', :require => 'rack/cache'
+gem 'dragonfly', '~> 0.9.11'
